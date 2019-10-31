@@ -47,21 +47,27 @@
         <li><label>团队规范</label></li>
 
           
-            <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
+            <li><a title="代码优化最佳实践" href="15724943759398.html">代码优化最佳实践</a></li>
           
             <li><a title="commit 规范" href="15436310613434.html">commit 规范</a></li>
+          
+            <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
+          
+            <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
           
             <li><a title="Js规范" href="15257651425045.html">Js规范</a></li>
           
             <li><a title="SASS 规范" href="15262926664978.html">SASS 规范</a></li>
-          
-            <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
           
 
       
         <li class="divider"></li>
         <li><label>vue</label></li>
 
+          
+            <li><a title="font-family 加载外部base64编码字体" href="15629174295154.html">font-family 加载外部base64编码字体</a></li>
+          
+            <li><a title="自动生成目录TREE的markdown插件" href="15629164217753.html">自动生成目录TREE的markdown插件</a></li>
           
             <li><a title="VUE" href="15228094852804.html">VUE</a></li>
           
@@ -166,8 +172,18 @@
 
       
         <li class="divider"></li>
+        <li><label>图片处理</label></li>
+
+          
+            <li><a title="axios 使用base64文件上传" href="15625760380574.html">axios 使用base64文件上传</a></li>
+          
+
+      
+        <li class="divider"></li>
         <li><label>css</label></li>
 
+          
+            <li><a title="提供常用样式组合" href="15628395124107.html">提供常用样式组合</a></li>
           
             <li><a title="弹性布局" href="15262622804277.html">弹性布局</a></li>
           
@@ -198,19 +214,25 @@
                     
                       <li class="side-title"><span>团队规范</span></li>
                         
-                          <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
+                          <li><a title="代码优化最佳实践" href="15724943759398.html">代码优化最佳实践</a></li>
                         
                           <li><a title="commit 规范" href="15436310613434.html">commit 规范</a></li>
+                        
+                          <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
+                        
+                          <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
                         
                           <li><a title="Js规范" href="15257651425045.html">Js规范</a></li>
                         
                           <li><a title="SASS 规范" href="15262926664978.html">SASS 规范</a></li>
                         
-                          <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
-                        
 
                     
                       <li class="side-title"><span>vue</span></li>
+                        
+                          <li><a title="font-family 加载外部base64编码字体" href="15629174295154.html">font-family 加载外部base64编码字体</a></li>
+                        
+                          <li><a title="自动生成目录TREE的markdown插件" href="15629164217753.html">自动生成目录TREE的markdown插件</a></li>
                         
                           <li><a title="VUE" href="15228094852804.html">VUE</a></li>
                         
@@ -294,7 +316,15 @@
                         
 
                     
+                      <li class="side-title"><span>图片处理</span></li>
+                        
+                          <li><a title="axios 使用base64文件上传" href="15625760380574.html">axios 使用base64文件上传</a></li>
+                        
+
+                    
                       <li class="side-title"><span>css</span></li>
+                        
+                          <li><a title="提供常用样式组合" href="15628395124107.html">提供常用样式组合</a></li>
                         
                           <li><a title="弹性布局" href="15262622804277.html">弹性布局</a></li>
                         
@@ -522,7 +552,14 @@
 }
 </code></pre>
 
-<h3 id="toc_8">属性书写顺序</h3>
+<h3 id="toc_8">边框样式写法</h3>
+
+<p>线条粗细 线条样式 颜色</p>
+
+<pre><code class="language-text">border: 1px solid #d9d9d9;
+</code></pre>
+
+<h3 id="toc_9">属性书写顺序</h3>
 
 <p>建议遵循以下顺序：</p>
 
@@ -552,7 +589,7 @@
 }
 </code></pre>
 
-<h3 id="toc_9">CSS3浏览器私有前缀写法</h3>
+<h3 id="toc_10">CSS3浏览器私有前缀写法</h3>
 
 <p>CSS3 浏览器私有前缀在前，标准前缀在后</p>
 
@@ -569,9 +606,9 @@
 <li>如果框架使用了auto-prefix，则不需要处理浏览器私有前缀</li>
 </ul>
 
-<h2 id="toc_10">注释规范</h2>
+<h2 id="toc_11">注释规范</h2>
 
-<h3 id="toc_11">单行注释</h3>
+<h3 id="toc_12">单行注释</h3>
 
 <p>注释内容第一个字符和最后一个字符都是一个空格字符，单独占一行，行与行之间相隔一行</p>
 
@@ -594,7 +631,7 @@
 }
 </code></pre>
 
-<h3 id="toc_12">模块注释</h3>
+<h3 id="toc_13">模块注释</h3>
 
 <p>注释内容第一个字符和最后一个字符都是一个空格字符，/* 与 模块信息描述占一行，多个横线分隔符-与*/占一行，行与行之间相隔两行</p>
 
@@ -620,7 +657,7 @@
 .mod_b {}
 </code></pre>
 
-<h3 id="toc_13">文件信息注释</h3>
+<h3 id="toc_14">文件信息注释</h3>
 
 <p>在样式文件编码声明 @charset 语句下面注明页面名称、作者、创建日期等信息</p>
 
@@ -632,7 +669,7 @@
  */
 </code></pre>
 
-<h2 id="toc_14">覆盖规范</h2>
+<h2 id="toc_15">覆盖规范</h2>
 
 <ul>
 <li>尽可能少用 importent</li>
@@ -646,13 +683,13 @@
 <p>vue 单文件组件修改样式不生效可使用 /deep/ 或 &gt;&gt;&gt;</p>
 </blockquote>
 
-<h2 id="toc_15">媒体查询</h2>
+<h2 id="toc_16">媒体查询</h2>
 
 <p>对于内部管理系统，商务多使用 ThinkPad 笔记本，屏幕分辨率为 1366*768。建议使用Chrome devtool进行适配</p>
 
-<p><img src="media/15262900347452/15616012790042.jpg" alt=""/></p>
+<p><figure><img src="media/15262900347452/15616012790042.jpg" alt=""/></figure></p>
 
-<h3 id="toc_16">优先 PC 端</h3>
+<h3 id="toc_17">优先 PC 端</h3>
 
 <p>默认按最大尺寸进行布局，当尺寸缩小时逐步变成移动端布局</p>
 
@@ -682,7 +719,7 @@
 
 </code></pre>
 
-<h3 id="toc_17">优先移动端</h3>
+<h3 id="toc_18">优先移动端</h3>
 
 <p>默认按最小尺寸进行布局，当尺寸放大时逐步变成 PC 端布局</p>
 
@@ -722,11 +759,11 @@
 
 </code></pre>
 
-<h2 id="toc_18">单位规范</h2>
+<h2 id="toc_19">单位规范</h2>
 
 <p>CSS 单位有两种，分别是绝对单位和相对单位。</p>
 
-<h3 id="toc_19">常用绝对单位</h3>
+<h3 id="toc_20">常用绝对单位</h3>
 
 <ul>
 <li>px：像素 (计算机屏幕上的一个点)</li>
@@ -735,7 +772,7 @@
 <li>pt：磅 (1 pt 等于 1/72 英寸)</li>
 </ul>
 
-<h3 id="toc_20">常用相对单位</h3>
+<h3 id="toc_21">常用相对单位</h3>
 
 <ul>
 <li>%：父元素百分比</li>
@@ -759,6 +796,8 @@
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
+	        <a href="15625760380574.html"  title="Previous Post: axios 使用base64文件上传">&laquo; axios 使用base64文件上传</a>
+	    
 	</div>
   </div>
   <div class="large-6 columns">

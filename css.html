@@ -47,21 +47,27 @@
         <li><label>团队规范</label></li>
 
           
-            <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
+            <li><a title="代码优化最佳实践" href="15724943759398.html">代码优化最佳实践</a></li>
           
             <li><a title="commit 规范" href="15436310613434.html">commit 规范</a></li>
+          
+            <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
+          
+            <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
           
             <li><a title="Js规范" href="15257651425045.html">Js规范</a></li>
           
             <li><a title="SASS 规范" href="15262926664978.html">SASS 规范</a></li>
-          
-            <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
           
 
       
         <li class="divider"></li>
         <li><label>vue</label></li>
 
+          
+            <li><a title="font-family 加载外部base64编码字体" href="15629174295154.html">font-family 加载外部base64编码字体</a></li>
+          
+            <li><a title="自动生成目录TREE的markdown插件" href="15629164217753.html">自动生成目录TREE的markdown插件</a></li>
           
             <li><a title="VUE" href="15228094852804.html">VUE</a></li>
           
@@ -166,8 +172,18 @@
 
       
         <li class="divider"></li>
+        <li><label>图片处理</label></li>
+
+          
+            <li><a title="axios 使用base64文件上传" href="15625760380574.html">axios 使用base64文件上传</a></li>
+          
+
+      
+        <li class="divider"></li>
         <li><label>css</label></li>
 
+          
+            <li><a title="提供常用样式组合" href="15628395124107.html">提供常用样式组合</a></li>
           
             <li><a title="弹性布局" href="15262622804277.html">弹性布局</a></li>
           
@@ -198,19 +214,25 @@
                     
                       <li class="side-title"><span>团队规范</span></li>
                         
-                          <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
+                          <li><a title="代码优化最佳实践" href="15724943759398.html">代码优化最佳实践</a></li>
                         
                           <li><a title="commit 规范" href="15436310613434.html">commit 规范</a></li>
+                        
+                          <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
+                        
+                          <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
                         
                           <li><a title="Js规范" href="15257651425045.html">Js规范</a></li>
                         
                           <li><a title="SASS 规范" href="15262926664978.html">SASS 规范</a></li>
                         
-                          <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
-                        
 
                     
                       <li class="side-title"><span>vue</span></li>
+                        
+                          <li><a title="font-family 加载外部base64编码字体" href="15629174295154.html">font-family 加载外部base64编码字体</a></li>
+                        
+                          <li><a title="自动生成目录TREE的markdown插件" href="15629164217753.html">自动生成目录TREE的markdown插件</a></li>
                         
                           <li><a title="VUE" href="15228094852804.html">VUE</a></li>
                         
@@ -294,7 +316,15 @@
                         
 
                     
+                      <li class="side-title"><span>图片处理</span></li>
+                        
+                          <li><a title="axios 使用base64文件上传" href="15625760380574.html">axios 使用base64文件上传</a></li>
+                        
+
+                    
                       <li class="side-title"><span>css</span></li>
+                        
+                          <li><a title="提供常用样式组合" href="15628395124107.html">提供常用样式组合</a></li>
                         
                           <li><a title="弹性布局" href="15262622804277.html">弹性布局</a></li>
                         
@@ -318,203 +348,31 @@
 
 	
 		<div class="markdown-body">
-		<h1>弹性布局</h1>
+		<h1>提供常用样式组合</h1>
 
-		<h2 id="toc_0">前言</h2>
+		<h2 id="toc_0">字体</h2>
 
-<p>在传统的布局方案中，我们主要是用<code>display</code>、<code>float</code>、<code>position</code>等属性，它们已经帮助我们解决了很多布局问题。</p>
+<h3 id="toc_1">预设</h3>
 
-<p>flex布局方案于2009年被W3C提出，短短几行代码，就能实现各种页面布局效果。在<a href="https://caniuse.com/">caniuse</a>中查询，可以看到目前所有现代浏览器都能完美支持该属性。</p>
+<p>fz-[1-100]: font-size 控制 1 - 100 rpx</p>
 
-<span id="more"></span><!-- more -->
+<p>.text-[media] media的可选值有：</p>
 
-<h2 id="toc_1">概念</h2>
+<p>xxs: 16rpx</p>
 
-<p>Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，主要思想是给予容器控制内部元素高度和宽度的能力。它为盒状模型提供极大的灵活性。</p>
+<h2 id="toc_2">间距</h2>
 
-<p>定义容器：</p>
-
-<pre><code class="language-text">.box{
-    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
-    display: -moz-box; /* 老版本语法: Firefox (buggy) */
-    display: -ms-flexbox; /* 混合版本语法: IE 10 */
-    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
-    display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */ 
-}
-</code></pre>
-
-<p>使用flex布局的案例中，设置了flex属性的父元素一般称为Flex 容器（flex container），简称&quot;容器&quot;。<br/>
-它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称&quot;项目&quot;。</p>
-
-<h2 id="toc_2">属性列表</h2>
-
-<p><img src="https://i.imgur.com/Y9uGF4Y.png" alt=""/></p>
-
-<h2 id="toc_3">容器属性详解</h2>
-
-<p><strong>1、flex-direction</strong></p>
-
-<p>决定主轴的方向，即项目排列方向。一共有4个值：</p>
-
-<ul>
-<li>row：主轴为水平方向，项目沿主轴从左至右排列</li>
-<li>column：主轴为竖直方向，项目沿主轴从上至下排列</li>
-<li>row-reverse：主轴水平，项目从右至左排列，与row反向</li>
-<li>column-reverse：主轴竖直，项目从下至上排列，与column反向</li>
-</ul>
-
-<p>示例：</p>
-
-<p><img src="https://i.imgur.com/Li5BG7Q.png" alt=""/><br/>
-<img src="https://i.imgur.com/OaLL9wQ.png" alt=""/></p>
-
-<p><strong>2、flex-wrap</strong></p>
-
-<p>默认情况下，item排列在一条线上，即主轴上，flex-wrap决定当排列不下时是否换行以及换行的方式。一共有3个值：</p>
-
-<ul>
-<li>nowrap：自动缩小项目，不换行</li>
-<li>wrap：换行，且第一行在上方</li>
-<li>wrap-reverse：换行，第一行在下面</li>
-</ul>
-
-<p>示例：</p>
-
-<p><img src="https://i.imgur.com/kGb75ED.png" alt=""/><br/>
-<img src="https://i.imgur.com/0UdxllV.png" alt=""/><br/>
-<img src="https://i.imgur.com/GgIsIsw.png" alt=""/></p>
-
-<p><strong>3、flex-flow</strong></p>
-
-<p>是flex-direction和flex-wrap的简写形式。默认值为row nowrap，即横向排列不换行。</p>
-
-<p><strong>4、justify-content</strong></p>
-
-<p>决定item在主轴上的对齐方式。一共有5个值：</p>
-
-<ul>
-<li>flex-start：左对齐</li>
-<li>flex-end：右对齐</li>
-<li>center：居中对齐</li>
-<li>space- between：两端对齐</li>
-<li>space-around：沿轴线均匀分布</li>
-</ul>
-
-<p>示例：</p>
-
-<p><img src="https://i.imgur.com/mOwe68O.png" alt=""/></p>
-
-<p><strong>5、align-items</strong></p>
-
-<p>决定了item在交叉轴上的对齐方式。一共有5个值、，在主轴水平的情况下：</p>
-
-<ul>
-<li>flex-start：顶端对齐</li>
-<li>flex-end：底部对齐</li>
-<li>center：竖直方向上居中对齐</li>
-<li>baseline：item第一行文字的底部对齐</li>
-<li>stretch：当item未设置高度时，item将和容器等高对齐</li>
-</ul>
-
-<p>示例：</p>
-
-<p><img src="https://i.imgur.com/AGvBSDG.png" alt=""/></p>
-
-<p><strong>6、align-content</strong></p>
-
-<p>该属性定义了当有多根主轴时，即item不止一行时，多行在交叉轴轴上的对齐方式。<br/>
-注意当有多行时，定义了align-content后，align-items属性将失效。一共有6个值，在主轴水平的情况下：</p>
-
-<ul>
-<li>flex-start：左对齐</li>
-<li>flex-end：右对齐</li>
-<li>center：居中对齐</li>
-<li>space-between：两端对齐</li>
-<li>space-around：沿轴线均匀分布</li>
-<li>stretch：各行将根据其flex-grow值伸展以充分占据剩余空间</li>
-</ul>
-
-<p>示例：</p>
-
-<p><img src="https://i.imgur.com/Yfcjqzg.png" alt=""/><br/>
-<img src="https://i.imgur.com/zlmdVWo.png" alt=""/></p>
-
-<h2 id="toc_4">flex item 项目属性详解</h2>
-
-<p><strong>1、order</strong></p>
-
-<p>order的值是整数，默认为0，整数越小，item排列越靠前。</p>
-
-<p>示例：</p>
-
-<pre><code class="language-text">&lt;div class=&quot;flex&quot;&gt;
-    &lt;div class=&quot;item&quot; style=&quot;order:4&quot;&gt;&lt;p&gt;item 1&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;item&quot; style=&quot;order:3&quot;&gt;&lt;p&gt;item 2&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;item&quot; style=&quot;order:2&quot;&gt;&lt;p&gt;item 3&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;item&quot; style=&quot;order:1&quot;&gt;&lt;p&gt;item 4&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>效果如图：</p>
-
-<p><img src="https://i.imgur.com/Ymm4ro8.png" alt=""/></p>
-
-<p><strong>2、flex-grow</strong></p>
-
-<p>定义了当flex容器有多余空间时，item是否放大。<br/>
-默认值为0，即当有多余空间时也不放大；<br/>
-可能的值为整数，表示不同item的放大比例，即当有多余空间时item1、item2、和item3以1：2:3的比例放大。</p>
-
-<pre><code class="language-text">&lt;div class=&quot;flex&quot;&gt;
-    &lt;div class=&quot;item1&quot; style=&quot;flex-grow:1&quot;&gt;&lt;p&gt;item 1&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;item2&quot; style=&quot;flex-grow:2&quot;&gt;&lt;p&gt;item 2&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;item3&quot; style=&quot;flex-grow:3&quot;&gt;&lt;p&gt;item 3&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p><strong>3、flex-shrink</strong></p>
-
-<p>定义了当容器空间不足时，item是否缩小。<br/>
-默认值为1，表示当空间不足时，item自动缩小。<br/>
-其可能的值为整数，表示不同item的缩小比例，负值对该属性无效。</p>
-
-<p><strong>4、flex-basis</strong></p>
-
-<p>表示项目在主轴上占据的空间，默认值为auto。</p>
-
-<pre><code class="language-text">&lt;div class=&quot;flex&quot;&gt;
-    &lt;div class=&quot;item&quot; style=&quot;flex-basis:40px&quot;&gt;&lt;p&gt;item 1&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;item&quot; style=&quot;flex-basis:80px&quot;&gt;&lt;p&gt;item 2&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;item&quot; style=&quot;flex-basis:160px&quot;&gt;&lt;p&gt;item 3&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>效果如图：</p>
-
-<p><img src="https://i.imgur.com/wlzmUxu.png" alt=""/></p>
-
-<p><strong>5、flex</strong></p>
-
-<p>flex属性是flex-grow、flex-shrink和flex-basis三属性的简写总和，默认值为0 1 auto，后两个属性可选。<strong>也是我们在CSS中最常使用的写法</strong>。</p>
-
-<p><strong>6、align-self</strong></p>
-
-<p>align-self属性允许item有自己独特的在交叉轴上的对齐方式，可覆盖align-items属性。<br/>
-它一共有6个值，默认值为auto。</p>
-
-<ul>
-<li>auto：和父元素align-self的值一致</li>
-<li>flex-start：顶端对齐</li>
-<li>flex-end：底部对齐</li>
-<li>center：竖直方向上居中对齐</li>
-<li>baseline：item第一行文字的底部对齐</li>
-<li>stretch：当item未设置高度时，item将和容器等高对齐</li>
-</ul>
-
-<p><img src="https://i.imgur.com/MCM2ylz.png" alt=""/></p>
+<p>pd-[1-100]<br/>
+pd-top-[1-100]<br/>
+pd-right-[1-100]<br/>
+pd-bottom-[1-100]<br/>
+pd-left-[1-100]</p>
 
 
 		</div>
+	
+
+ 
 	
 
   

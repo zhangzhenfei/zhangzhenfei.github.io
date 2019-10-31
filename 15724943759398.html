@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  vue - zhangzhenfei blog
+  代码优化最佳实践 - zhangzhenfei blog
   
   </title>
  <meta name="description" content="爱生活 爱折腾">
@@ -343,31 +343,86 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>代码优化最佳实践</h1>
+
+<h3 id="toc_0">多重三元表达式使用查表法优化</h3>
+
+<pre><code class="language-javascript">//多重三元
+const api = this.type === &#39;ups&#39; ? upsOne : this.type === &#39;air&#39; ? airOne : this.type === &#39;service&#39; ? serviceOne : &#39;&#39;
+</code></pre>
+
+<p>优化后：</p>
+
+<pre><code class="language-javascript">const apiMethodMap = {
+    &#39;ups&#39;: upsOne,
+    &#39;apr&#39;: airOne,
+    &#39;service&#39;: serviceOne
+}
+const api = apiMethodMap[this.type] || upsOne
+</code></pre>
+
+<h3 id="toc_1">api搜索和本地搜索</h3>
+
+<p>本地搜索页面直接使用scroll-view即可，使用服务器搜索的时候才需要结合mescroll-uni</p>
+
+<p>搜索组件直接使用PiUI提供的input-search组件即可，不需要自己写样式</p>
+
+<h3 id="toc_2">对象，数组，字符串，非空等判断，不要自己写逻辑，直接用loadsh提供的函数</h3>
+
+<pre><code class="language-javascript">if (this.form[child.key] !== null &amp;&amp; this.form[child.key] !== 0 &amp;&amp; this.form[child.key] !== &#39;&#39;) {
+    status.push(true)
+} else {
+    status.push(false)
+}
+</code></pre>
+
+<p>优化后</p>
+
+<pre><code class="language-javascript">status.push(isEmpty(childKey.default) || isEmpty(childKey.key))
+</code></pre>
+
+<p><figure><img src="media/15724943759398/15725107093878.jpg" alt=""/></figure></p>
+
+<p><figure><img src="media/15724943759398/15725107268035.jpg" alt=""/></figure></p>
 
 
-	
-		<div class="markdown-body">
-		<h1>font-family 加载外部base64编码字体</h1>
+</div>
 
-		<p>字体使用是网页设计中不可或缺的一部分。经常地，我们希望在网页中使用某一特定字体，但是该字体并非主流操作系统的内置字体，这样用户在浏览页面的时候就有可能看不到真实的设计。美工设计师最常做的办法是把想要的文字做成图片，这样做有几个明显缺陷：1. 不可能大范围的使用该字体；2. 图片内容相对使用文字不易修改；3. 不利于网站SEO（主流搜索引擎不会将图片alt内容作为判断网页内容相关性的有效因素）。网络上有一些使用sIFR技术、或javascript/flash hack的方法，但实现起来或繁琐，或有缺陷。下面要讲的是如何只通过CSS的@font-face属性来实现在网页中嵌入任意字体。</p>
+<br /><br />
+<hr />
 
-<p><a href="https://transfonter.org/">https://transfonter.org/</a></p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15436310613434.html" 
+	        title="Next Post: commit 规范">commit 规范 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p><a href="https://juejin.im/post/5a31ca3af265da432a7b9773">https://juejin.im/post/5a31ca3af265da432a7b9773</a></p>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-
-		</div>
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15724943759398.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

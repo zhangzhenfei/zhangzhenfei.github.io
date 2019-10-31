@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  vue - zhangzhenfei blog
+  axios 使用base64文件上传 - zhangzhenfei blog
   
   </title>
  <meta name="description" content="爱生活 爱折腾">
@@ -343,31 +343,77 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>axios 使用base64文件上传</h1>
+
+<pre><code class="language-javascript">public handleSaveWatermark() {
+    const e = canvas.toDataURL({
+      multiplier: 1,
+    });
+
+    function dataURLtoFile(dataUrl, filename) {
+      const arr = dataUrl.split(&#39;,&#39;);
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const bstr = atob(arr[1]);
+      let n = bstr.length;
+      const u8arr = new Uint8Array(n);
+      while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+      }
+      return new File([u8arr], filename, { type: mime });
+    }
+
+    const file = dataURLtoFile(e, &#39;hello.txt&#39;);
+    console.log(file);
+
+    const uploadFormData = new FormData();
+    uploadFormData.append(&#39;file&#39;, file);
+    // 使用 axios 进行文件上传的请求
+    axios.post(`${BASE_URL}/platform/hg/goods/v1/image/singleimgupload`, uploadFormData, {
+      withCredentials: true,
+    });
+  }
+</code></pre>
 
 
-	
-		<div class="markdown-body">
-		<h1>font-family 加载外部base64编码字体</h1>
+</div>
 
-		<p>字体使用是网页设计中不可或缺的一部分。经常地，我们希望在网页中使用某一特定字体，但是该字体并非主流操作系统的内置字体，这样用户在浏览页面的时候就有可能看不到真实的设计。美工设计师最常做的办法是把想要的文字做成图片，这样做有几个明显缺陷：1. 不可能大范围的使用该字体；2. 图片内容相对使用文字不易修改；3. 不利于网站SEO（主流搜索引擎不会将图片alt内容作为判断网页内容相关性的有效因素）。网络上有一些使用sIFR技术、或javascript/flash hack的方法，但实现起来或繁琐，或有缺陷。下面要讲的是如何只通过CSS的@font-face属性来实现在网页中嵌入任意字体。</p>
+<br /><br />
+<hr />
 
-<p><a href="https://transfonter.org/">https://transfonter.org/</a></p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15628395124107.html"  title="Previous Post: 提供常用样式组合">&laquo; 提供常用样式组合</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15262900347452.html" 
+	        title="Next Post: CSS 规范">CSS 规范 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p><a href="https://juejin.im/post/5a31ca3af265da432a7b9773">https://juejin.im/post/5a31ca3af265da432a7b9773</a></p>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-
-		</div>
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15625760380574.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

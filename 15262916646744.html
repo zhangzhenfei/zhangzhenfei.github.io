@@ -47,21 +47,27 @@
         <li><label>团队规范</label></li>
 
           
-            <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
+            <li><a title="代码优化最佳实践" href="15724943759398.html">代码优化最佳实践</a></li>
           
             <li><a title="commit 规范" href="15436310613434.html">commit 规范</a></li>
+          
+            <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
+          
+            <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
           
             <li><a title="Js规范" href="15257651425045.html">Js规范</a></li>
           
             <li><a title="SASS 规范" href="15262926664978.html">SASS 规范</a></li>
-          
-            <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
           
 
       
         <li class="divider"></li>
         <li><label>vue</label></li>
 
+          
+            <li><a title="font-family 加载外部base64编码字体" href="15629174295154.html">font-family 加载外部base64编码字体</a></li>
+          
+            <li><a title="自动生成目录TREE的markdown插件" href="15629164217753.html">自动生成目录TREE的markdown插件</a></li>
           
             <li><a title="VUE" href="15228094852804.html">VUE</a></li>
           
@@ -166,8 +172,18 @@
 
       
         <li class="divider"></li>
+        <li><label>图片处理</label></li>
+
+          
+            <li><a title="axios 使用base64文件上传" href="15625760380574.html">axios 使用base64文件上传</a></li>
+          
+
+      
+        <li class="divider"></li>
         <li><label>css</label></li>
 
+          
+            <li><a title="提供常用样式组合" href="15628395124107.html">提供常用样式组合</a></li>
           
             <li><a title="弹性布局" href="15262622804277.html">弹性布局</a></li>
           
@@ -198,19 +214,25 @@
                     
                       <li class="side-title"><span>团队规范</span></li>
                         
-                          <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
+                          <li><a title="代码优化最佳实践" href="15724943759398.html">代码优化最佳实践</a></li>
                         
                           <li><a title="commit 规范" href="15436310613434.html">commit 规范</a></li>
+                        
+                          <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
+                        
+                          <li><a title="CSS 规范" href="15262900347452.html">CSS 规范</a></li>
                         
                           <li><a title="Js规范" href="15257651425045.html">Js规范</a></li>
                         
                           <li><a title="SASS 规范" href="15262926664978.html">SASS 规范</a></li>
                         
-                          <li><a title="命名规范" href="15262916646744.html">命名规范</a></li>
-                        
 
                     
                       <li class="side-title"><span>vue</span></li>
+                        
+                          <li><a title="font-family 加载外部base64编码字体" href="15629174295154.html">font-family 加载外部base64编码字体</a></li>
+                        
+                          <li><a title="自动生成目录TREE的markdown插件" href="15629164217753.html">自动生成目录TREE的markdown插件</a></li>
                         
                           <li><a title="VUE" href="15228094852804.html">VUE</a></li>
                         
@@ -294,7 +316,15 @@
                         
 
                     
+                      <li class="side-title"><span>图片处理</span></li>
+                        
+                          <li><a title="axios 使用base64文件上传" href="15625760380574.html">axios 使用base64文件上传</a></li>
+                        
+
+                    
                       <li class="side-title"><span>css</span></li>
+                        
+                          <li><a title="提供常用样式组合" href="15628395124107.html">提供常用样式组合</a></li>
                         
                           <li><a title="弹性布局" href="15262622804277.html">弹性布局</a></li>
                         
@@ -316,6 +346,73 @@
  <div class="markdown-body">
 <h1>命名规范</h1>
 
+<h2 id="toc_0">单位</h2>
+
+<p>统一使用rpx，固定尺寸除外（1px边框之类）</p>
+
+<h2 id="toc_1">点击事件统一使用@tap</h2>
+
+<h2 id="toc_2">页面命名（pages）</h2>
+
+<p>一级页面放在pages下，页面需要以文件夹形式定义，命名方式以横线分割</p>
+
+<p>|--pages<br/>
+|--home<br/>
+|----index.vue                  // 主页<br/>
+|----api.js                     // api<br/>
+|------sub-page <br/>
+|--------index.vue              // 二级页面入口<br/>
+|--------api.js                 // 二级页面api定义</p>
+
+<h2 id="toc_3">组件命名规范</h2>
+
+<p>组件使用-方式命名，引用组件定义使用大写首字母驼峰命名，</p>
+
+<pre><code class="language-javascript">import UniNavBar from &quot;@/components/uni-nav-bar/uni-nav-bar.vue&quot;
+export default {
+  components: {UniNavBar},
+  data() {
+    return {
+      ColorList: this.ColorList
+    };
+  }
+};
+</code></pre>
+
+<p>使用组件使用-方式命名</p>
+
+<pre><code class="language-markup">&lt;uni-nav-bar&gt;
+  &lt;view&gt;背景&lt;/view&gt;
+  &lt;view slot=&quot;left&quot;&gt;left&lt;/view&gt;
+  &lt;view slot=&quot;right&quot;&gt;right&lt;/view&gt;
+&lt;/uni-nav-bar&gt;
+</code></pre>
+
+<h3 id="toc_4">组件内部emit事件，直接写事件名称，如</h3>
+
+<pre><code class="language-javascript">emit(&#39;click&#39;)
+</code></pre>
+
+<h3 id="toc_5">外部组件调用，使用handleXXX处理</h3>
+
+<pre><code class="language-markup">&lt;component @click=&quot;handleClick&quot; /&gt;
+</code></pre>
+
+<h3 id="toc_6">可能用到的组件</h3>
+
+<h4 id="toc_7">NoticeBar 通告栏</h4>
+
+<p><a href="https://ext.dcloud.net.cn/plugin?id=30">https://ext.dcloud.net.cn/plugin?id=30</a> </p>
+
+<p><figure><img src="media/15262916646744/15628974573026.jpg" alt=""/></figure></p>
+
+<h4 id="toc_8">mescroll 下拉刷新，上拉加载更多</h4>
+
+<p><a href="http://www.mescroll.com/uni.html">http://www.mescroll.com/uni.html</a></p>
+
+<h4 id="toc_9">关于静默更新</h4>
+
+<p><a href="http://ext.dcloud.net.cn/plugin?id=237">http://ext.dcloud.net.cn/plugin?id=237</a></p>
 
 
 </div>
@@ -327,15 +424,15 @@
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="15262926664978.html"  title="Previous Post: SASS 规范">&laquo; SASS 规范</a>
+	        <a href="15629164217753.html"  title="Previous Post: 自动生成目录TREE的markdown插件">&laquo; 自动生成目录TREE的markdown插件</a>
 	    
 	</div>
   </div>
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="15234151636952.html" 
-	        title="Next Post: 本地仓库项目，同步更新远程分支的方法">本地仓库项目，同步更新远程分支的方法 &raquo;</a>
+	        <a href="15628395124107.html" 
+	        title="Next Post: 提供常用样式组合">提供常用样式组合 &raquo;</a>
 	    
 	</div>
   </div>
